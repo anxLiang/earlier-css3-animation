@@ -1,0 +1,641 @@
+body, h1, h2, h3, h4, h5, h6, hr, p, blockquote, /* structural elements 结构元素 */
+dl, dt, dd, ul, ol, li, /* list elements 列表元素 */
+pre, /* text formatting elements 文本格式元素 */
+fieldset, lengend, button, input, textarea, /* form elements 表单元素 */
+th, td { /* table elements 表格元素 */
+    margin: 0;
+    padding: 0;
+}
+
+
+ul, li { list-style-type: none; }
+
+#content 
+{
+    width: 100%;
+    height: 100%;
+   /* top: 20%;
+    left: 20%; */
+    overflow: hidden;
+    position: absolute;
+    transform-style: preserve-3d;
+
+}
+
+.content-wrap 
+{
+    position: relative;
+    left: 0;
+
+}
+
+
+.content-wrap > li 
+{
+    background: #CAE1FF;
+    color: red;
+    float: left;
+    overflow: hidden;
+    position: relative;
+}
+
+li:first-child
+{
+    background-image: url(img/QiXiA.png);
+    background-size: 100% 100%;
+}
+
+li:nth-child(2) 
+{
+    background-image: url(img/QiXiB-dark.png);
+    background-size: 100% 100%;
+}
+
+li:nth-child(3) 
+{
+    background-image: url(img/QiXiC.png);
+    background-size: 100% 100%;
+}
+
+#boyBox
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100px;
+    height: 200px;
+    background-image: url(img/boy-all.png);
+    background-repeat: no-repeat;
+    background-size: 600% 300%;
+
+    /*background-position: 0px -195px;*/
+}
+
+.changeStep
+{
+    animation-name: changeSteps;
+    animation-duration: 1s;
+    animation-timing-function: steps(1, start);
+    animation-iteration-count: infinite;
+    animation-fill-mode: forwards;
+}
+
+@keyframes changeSteps
+{
+    0%{
+        background-position: 0 -195px;
+    }
+    25%{
+        background-position: -100px -195px;
+    }
+    50%{
+        background-position: -200px -195px;
+    }
+    75%{
+        background-position: -300px -195px;
+    }
+    100%{
+        background-position: 0 -195px;
+    }
+}
+
+.flowerStep 
+{
+    animation-name: flolerWalk;
+    animation-duration: 1s;
+    animation-iteration-count: infinite;
+    animation-timing-function: step-start;
+}
+
+@keyframes flolerWalk
+{
+    0% 
+    {
+        background-position: 0px 5px;
+    }
+    25%
+    {
+        background-position: -100px 5px;
+    }
+    50% 
+    {
+        background-position: -200px 5px;
+    }
+    75% 
+    {
+        background-position: -100px 5px;
+    }
+    100% 
+    {
+        background-position: 0px 5px;
+    }
+}
+
+.pauseWalk
+{
+    animation-play-state: paused;
+}
+
+/*
+    太阳属性及动画
+ */
+#sun
+{
+    width: 200px;
+    height: 200px;
+    position: absolute;
+    top: -30px;
+    left: 45%;
+    z-index: 1;
+    background-image: url(img/sun.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+.sunAnimation
+{    
+    animation-name: sunDown;
+    animation-duration: 15s;
+    animation-timing-function: linear;
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes sunDown
+{
+    0%
+    {
+        transform: translate3d(0px, 0px, 0px);
+    }
+    100%
+    {
+        transform: translate3d(-1000px, 200px, 0px);
+    }
+}
+
+/*
+    云属性、动画
+ */
+.cloud
+{
+    position: absolute;
+    z-index: 2;
+}
+
+.cloud1
+{
+    background-image: url(img/cloud1.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 200px;
+    height: 100px;
+    top: 10px;
+    left: 30%
+}
+
+.cloud2
+{
+    background-image: url(img/cloud2.png);
+    background-repeat: no-repeat;
+    background-size: 100% 100%;
+    width: 320px;
+    height: 160px;
+    top: 30px;
+    left: 60%;
+}
+
+.cloud1Animation
+{
+    animation-name: cloud1;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+.cloud2Animation
+{
+    animation-name: cloud2;
+    animation-duration: 20s;
+    animation-iteration-count: infinite;
+    animation-timing-function: ease-in-out;
+    animation-direction: alternate;
+    animation-fill-mode: forwards;
+}
+
+@keyframes cloud1
+{
+    40%
+    {
+        left: -10%;
+    }
+    100%
+    {
+        left: 90%
+    }
+}
+@keyframes cloud2
+{
+    40%
+    {
+        left: 10%;
+    }
+    100%
+    {
+        left: 80%
+    }
+}
+
+/*
+    门属性、动画
+ */
+.door
+{
+    width: 12.6%;
+    height: 23.4%;
+    overflow: hidden;
+
+    position: absolute;
+    top: 48.2%;
+    left: 52.2%;
+}
+
+#doorL, #doorR
+{
+    width: 50%;
+    height: 100%;
+    position: absolute;
+}
+
+#doorL
+{
+    left: 0;
+    background-image: url(img/door-left.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+#doorR
+{
+    left: 50%;
+    background-image: url(img/door-right.png);
+    background-size: 100% 100%;
+    background-repeat: no-repeat;
+}
+
+/*
+    飞鸟
+ */
+#bird
+{
+    width: 90px;
+    height: 70px;
+    position: absolute;
+    top: 15%;
+    left: 100%;
+    z-index: 3;
+
+    background-image: url(img/bird.png);
+    background-repeat: no-repeat;
+    background-size: 300% 100%;
+}
+
+.changeWing
+{
+    animation-name: changeWing;
+    animation-duration: 0.2s;
+    animation-timing-function: steps(1, start);
+    animation-iteration-count: infinite;
+}
+
+@keyframes changeWing
+{
+    25%
+    {
+        background-position: 0 0;
+    }
+    75%
+    {
+        background-position: -180px 0;
+    }
+}
+
+/*
+    女孩
+ */
+#girl
+{
+    position: absolute;
+    width: 100px;
+    height: 200px;
+    background-image: url(img/girl.png);
+    background-repeat: no-repeat;
+    background-size: 700% 100%;
+    background-position: -500px 0;
+
+    left: 49%;
+}
+
+/*
+    水流
+ */
+.water
+{
+    position: absolute;
+    bottom: -5%;
+    left: 28%;
+
+    width: 45%;
+    height: 30%;
+}
+
+
+.water_1,
+.water_2,
+.water_3,
+.water_4 {
+    width: 100%;
+    position: absolute;
+    height: 50%;
+    -webkit-animation-name: shake;
+    -webkit-animation-duration: 40s;
+    -webkit-animation-direction: alternate;
+    -webkit-anination-timing-function: linear;
+    -webkit-animation-iteration-count: infinite;
+    
+    -moz-animation-name: shake;
+    -moz-animation-duration: 40s;
+    -moz-animation-direction: alternate;
+    -moz-anination-timing-function: linear;
+    -moz-animation-iteration-count: infinite;
+}
+
+.water_1 {
+    width: 131px;
+    height: 15px;
+    top: 13%;
+    left: 35%;
+    background: url(img/water.png) -261px -0px no-repeat;
+}
+
+.water_2 {
+    width: 161px;
+    height: 9px;
+    top: 30%;
+    left: 45%;
+    background: url(img/water.png) -693px -0px no-repeat;
+    -webkit-animation-delay: 2s;
+    -moz-animation-delay: 2s;
+}
+
+.water_3 {
+    width: 261px;
+    height: 29px;
+    top: 50%;
+    left: 15%;
+    background: url(img/water.png) -0px -0px no-repeat;
+    -webkit-animation-delay: 1s;
+    -moz-animation-delay: 1s;
+}
+
+.water_4 {
+    width: 301px;
+    height: 12px;
+    top: 75%;
+    left: 30%;
+    background: url(img/water.png) -392px -0px no-repeat;
+    -webkit-animation-delay: 3s;
+    -moz-animation-delay: 3s;
+}
+
+@-webkit-keyframes shake {
+    0%, 100% {
+        -webkit-transform: translate3d(0, 0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -webkit-transform: translate3d(-30px, 0px, 0);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -webkit-transform: translate3d(30px, 0px, 0);
+    }
+}
+
+@-moz-keyframes shake {
+    0%, 100% {
+        -moz-transform: translate3d(0, 0, 0);
+    }
+    10%,
+    30%,
+    50%,
+    70%,
+    90% {
+        -moz-transform: translate3d(-30px, 0px, 0);
+    }
+    20%,
+    40%,
+    60%,
+    80% {
+        -moz-transform: translate3d(30px, 0px, 0);
+    }
+}
+/*星星*/
+
+.stars {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+}
+
+.stars > div {
+    position: absolute;
+    width: 30px;
+    height: 31px;
+    background-image: url(img/stars.png);
+    -webkit-animation-name: flash;
+    -webkit-animation-timing-function: ease-in-out;
+    -webkit-animation-iteration-count: infinite;
+    -webkit-animation-direction: alternate;
+    -moz-animation-name: flash;
+    -moz-animation-timing-function: ease-in-out;
+    -moz-animation-iteration-count: infinite;
+    -moz-animation-direction: alternate;
+    background-repeat: no-repeat;
+}
+
+.stars1 {
+    top: 20%;
+    left: 30%;
+    -webkit-animation-duration: 5s;
+    -moz-animation-duration: 5s;
+}
+
+.stars2 {
+    top: 15%;
+    left: 20%;
+    -webkit-animation-duration: 20s;
+    -moz-animation-duration: 20s;
+}
+
+.stars3 {
+    top: 25%;
+    left: 85%;
+    -webkit-animation-duration: 15s;
+    -moz-animation-duration: 15s;
+}
+
+.stars4 {
+    top: 30%;
+    left: 70%;
+    -webkit-animation-duration: 25s;
+    -moz-animation-duration: 25s;
+}
+
+.stars5 {
+    top: 25%;
+    left: 20%;
+    -webkit-animation-duration: 30s;
+    -moz-animation-duration: 30s;
+}
+
+.stars6 {
+    top: 10%;
+    left: 65%;
+    -webkit-animation-duration: 10s;
+    -moz-animation-duration: 10s;
+}
+
+@-webkit-keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+@-moz-keyframes flash {
+    0%, 50%, 100% {
+        opacity: 1;
+    }
+    25%,
+    75% {
+        opacity: 0;
+    }
+}
+
+/*
+    转身
+ */
+.boy-turnAround
+{
+    animation-name: boy-turnAround;
+    animation-duration: 2s;
+    animation-fill-mode: forwards;
+    animation-timing-function: steps(1, start);
+    animation-iteration-count: 1;
+
+}
+
+@keyframes boy-turnAround
+{
+    0%
+    {
+        background-position: 0px -400px;
+    }
+    50%
+    {
+        background-position: -100px -400px;
+    }
+    67%
+    {
+        background-position: -300px -400px;
+    }
+    84%
+    {
+        background-position: -400px -400px;
+    }
+    100%
+    {
+        background-position: -500px -400px;
+    }
+}
+
+.girl-turnAround
+{
+    animation-name: girl-turnAround;
+    animation-duration: 1s;
+    animation-timing-function: steps(1, start);
+    animation-fill-mode: forwards;
+    animation-iteration-count: 1;
+}
+
+@keyframes girl-turnAround
+{
+    0%
+    {
+        background-position: -500px 0px;
+    }
+    25%
+    {
+        background-position: 0px 0px;
+    }
+    50%
+    {
+        background-position: -200px 0px;
+    }
+    75%
+    {
+        background-position: -300px 0px;
+    }
+    100%
+    {
+        background-position: -400px 0px;
+    }
+}
+
+/*
+    雪花
+ */
+/*雪花*/
+
+#snowflake {
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    overflow: hidden;
+    pointer-events : none;
+}
+
+.snowbox
+{
+    width: 41px;
+    height: 41px;
+    position: absolute;
+    background-size: cover;
+    z-index: 10;
+    top: -50px;
+    transition-duration : 15s;
+    transition-timing-function : ease-out;
+    transition-property : top left;
+}
+
+#secondWrap
+{
+    position: absolute;
+    top: 0;
+    left: 0;
+    display: none;
+
+    width: 100%;
+    height: 100%;
+}
